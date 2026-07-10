@@ -8,3 +8,5 @@ export interface StatItem {
   number: string;
   label: string;
 }
+
+export type PageType = 'mission' | 'expertise' | 'capabilities' | 'contact';

@@ -1,26 +1,39 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 import NavBar from './components/NavBar';
-import StatsRow from './components/StatsRow';
 import BottomSection from './components/BottomSection';
 import MobileMenu from './components/MobileMenu';
-import { NavLink, StatItem } from './types';
+import MobilePageSelector from './components/MobilePageSelector';
+import ExpertisePage from './components/ExpertisePage';
+import CapabilitiesPage from './components/CapabilitiesPage';
+import ContactPage from './components/ContactPage';
+import { NavLink, PageType } from './types';
 
 const NAV_LINKS: NavLink[] = [
   { label: 'Mission', href: '#mission' },
   { label: 'Expertise', href: '#expertise' },
   { label: 'Capabilities', href: '#capabilities' },
-  { label: 'Solutions', href: '#solutions' },
-];
-
-const STAT_ITEMS: StatItem[] = [
-  { id: 'missions', number: '+800', label: 'SPATIAL MISSIONS' },
-  { id: 'data', number: '+450', label: 'DATA INTEGRATIONS' },
-  { id: 'partners', number: '+150', label: 'GOVT PARTNERS' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState<PageType>('mission');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Sync hash routing with react state
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash === '#expertise') setCurrentPage('expertise');
+      else if (hash === '#capabilities') setCurrentPage('capabilities');
+      else if (hash === '#contact') setCurrentPage('contact');
+      else setCurrentPage('mission');
+    };
+    
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   // Close menu on ESC keypress
   useEffect(() => {
@@ -66,8 +79,8 @@ export default function App() {
       {/* 
         Three-section full-screen column:
         1. Nav (fixed height, top-aligned)
-        2. Vertical Spacer (replacing StatsRow to maintain vertical distribution)
-        3. Bottom Section (pinned with bottom padding)
+        2. Mobile Page Selector (mobile only)
+        3. Dynamic Content
       */}
       <div 
         className="relative z-10 flex flex-col min-h-screen w-full" 
@@ -79,11 +92,38 @@ export default function App() {
           onOpenMenu={() => setIsMenuOpen(true)} 
         />
 
-        {/* Section 2: Vertical Spacer (hidden on mobile, flex-1 on desktop) */}
-        <div className="hidden md:block md:flex-1" id="vertical-spacer" />
+        {/* Section 2: Mobile Navigation Buttons (Mobile-only quick-switching buttons) */}
+        <MobilePageSelector 
+          currentPage={currentPage} 
+          onSelectPage={setCurrentPage} 
+        />
 
-        {/* Section 3: Bottom Content */}
-        <BottomSection />
+        {/* Section 3: Dynamic Content Body */}
+        <AnimatePresence mode="wait">
+          {currentPage === 'mission' && (
+            <motion.div 
+              key="mission-view"
+              className="flex-1 flex flex-col justify-between w-full"
+              id="mission-view-wrapper"
+            >
+              {/* Vertical Spacer (hidden on mobile, flex-1 on desktop) */}
+              <div className="hidden md:block md:flex-1" id="vertical-spacer" />
+              <BottomSection />
+            </motion.div>
+          )}
+
+          {currentPage === 'expertise' && (
+            <ExpertisePage key="expertise-view" />
+          )}
+
+          {currentPage === 'capabilities' && (
+            <CapabilitiesPage key="capabilities-view" />
+          )}
+
+          {currentPage === 'contact' && (
+            <ContactPage key="contact-view" />
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -99,3 +139,4 @@ export default function App() {
     </div>
   );
 }
+
