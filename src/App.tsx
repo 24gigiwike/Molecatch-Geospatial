@@ -79,8 +79,8 @@ export default function App() {
           onOpenMenu={() => setIsMenuOpen(true)} 
         />
 
-        {/* Section 2: Vertical Spacer */}
-        <div className="flex-1" id="vertical-spacer" />
+        {/* Section 2: Vertical Spacer (hidden on mobile, flex-1 on desktop) */}
+        <div className="hidden md:block md:flex-1" id="vertical-spacer" />
 
         {/* Section 3: Bottom Content */}
         <BottomSection />

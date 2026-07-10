@@ -16,3 +16,16 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Add custom typography utility for responsive fluid headline sizing */
+.responsive-headline {
+  font-size: clamp(2.4rem, 9vw, 4rem);
+  line-height: 0.95;
+}
+
+@media (min-width: 768px) {
+  .responsive-headline {
+    font-size: clamp(3.0rem, 5.5vw, 5.0rem);
+    line-height: 0.88;
+  }
+}
