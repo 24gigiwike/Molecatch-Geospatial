@@ -117,6 +117,34 @@ export default function App() {
             <ContactPage key="contact-view" />
           )}
         </AnimatePresence>
+
+        {/* Subtle Developer Credit Footer Signature */}
+        <div 
+          className="relative z-10 w-full flex justify-center mt-auto pt-10 pb-8 md:pb-10" 
+          id="developer-credit-container"
+        >
+          <a
+            href="https://webdesignking.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2.5 transition-all duration-300 ease-out hover:-translate-y-[2px] group cursor-pointer bg-transparent"
+            id="developer-credit-link"
+          >
+            <span 
+              className="font-sans text-[12px] md:text-[13px] font-medium tracking-widest uppercase text-neutral-500 opacity-65 group-hover:opacity-100 group-hover:text-[var(--color-accent)] transition-all duration-300 ease-out select-none"
+              id="developer-credit-text"
+            >
+              Built by
+            </span>
+            <img
+              src="https://res.cloudinary.com/dtkluxukm/image/upload/v1781877708/8_cwwfre.png"
+              alt="Web Design King Logo"
+              className="h-[18px] md:h-[22px] w-auto object-contain transition-none pointer-events-none select-none"
+              referrerPolicy="no-referrer"
+              id="developer-credit-logo"
+            />
+          </a>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
