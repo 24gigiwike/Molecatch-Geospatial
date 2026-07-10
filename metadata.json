@@ -1,0 +1,6 @@
+{
+  "name": "Creative Studio Hero Section",
+  "description": "A high-fidelity full-screen interactive hero section for a creative studio with a looping video background, fluid typography, smooth staggered entrance animations, and a mobile overlay menu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
