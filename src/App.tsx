@@ -7,16 +7,16 @@ import MobileMenu from './components/MobileMenu';
 import { NavLink, StatItem } from './types';
 
 const NAV_LINKS: NavLink[] = [
-  { label: 'Story', href: '#story' },
+  { label: 'Mission', href: '#mission' },
   { label: 'Expertise', href: '#expertise' },
-  { label: 'Studios', href: '#studios' },
-  { label: 'Feedback', href: '#feedback' },
+  { label: 'Capabilities', href: '#capabilities' },
+  { label: 'Solutions', href: '#solutions' },
 ];
 
 const STAT_ITEMS: StatItem[] = [
-  { id: 'brands', number: '+300', label: 'CRAFTED BRANDS' },
-  { id: 'products', number: '+200', label: 'DIGITAL PRODUCTS' },
-  { id: 'ventures', number: '+100', label: 'VENTURES FUNDED' },
+  { id: 'missions', number: '+800', label: 'SPATIAL MISSIONS' },
+  { id: 'data', number: '+450', label: 'DATA INTEGRATIONS' },
+  { id: 'partners', number: '+150', label: 'GOVT PARTNERS' },
 ];
 
 export default function App() {

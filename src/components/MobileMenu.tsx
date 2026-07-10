@@ -66,7 +66,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
           className="flex items-center gap-1.5 text-xl font-semibold tracking-widest uppercase text-[var(--color-accent)] hover:opacity-80 transition-opacity w-fit"
           id="mobile-menu-cta"
         >
-          <span>Work With Us</span>
+          <span>Talk to an Expert</span>
           <ArrowUpRight className="w-5 h-5 stroke-[2.5]" />
         </motion.a>
       </div>

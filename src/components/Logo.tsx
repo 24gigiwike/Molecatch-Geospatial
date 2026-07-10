@@ -12,18 +12,15 @@ export default function Logo({ index = 0 }: LogoProps) {
       initial="initial"
       animate="animate"
       custom={index}
-      className="flex items-center"
+      className="flex flex-col items-start select-none"
       id="app-logo"
     >
-      <div 
-        className="w-8 h-8 rounded-full border-2 border-[var(--color-accent)] flex items-center justify-center" 
-        id="logo-outer-ring"
-      >
-        <div 
-          className="w-2.5 h-2.5 rounded-full bg-[var(--color-accent)]" 
-          id="logo-inner-dot"
-        ></div>
-      </div>
+      <span className="text-xl sm:text-2xl font-bold tracking-widest text-black leading-none" id="logo-main-text">
+        MOLECATCH
+      </span>
+      <span className="text-[7px] sm:text-[8px] font-semibold tracking-widest text-[var(--color-accent)] leading-none mt-1 sm:mt-1.5" id="logo-sub-text">
+        GEOSPATIAL INTELLIGENCE SERVICES
+      </span>
     </motion.div>
   );
 }

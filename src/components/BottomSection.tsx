@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { fadeUpVariant, headingSlideUpVariant } from '../lib/animations';
 
 export default function BottomSection() {
-  const headingWords = ["Fearless", "Vision", "Delivered"];
+  const headingWords = ["Intelligence", "Powering", "Decisions"];
 
   return (
     <footer 
@@ -24,7 +24,7 @@ export default function BottomSection() {
           className="text-[10px] sm:text-xs md:text-sm font-semibold tracking-widest uppercase text-black leading-normal max-w-[130px] sm:max-w-[160px] md:max-w-xs"
           id="tagline-text"
         >
-          Shaping Bold <br /> Visions Into Power <br /> For Your Tribe
+          Precision Through <br /> Spatial Intelligence
         </motion.p>
 
         {/* Right CTA */}
@@ -37,7 +37,7 @@ export default function BottomSection() {
           className="flex items-center gap-1 text-base sm:text-xl md:text-2xl font-semibold tracking-widest uppercase text-[var(--color-accent)] hover:opacity-80 transition-opacity whitespace-nowrap"
           id="cta-link"
         >
-          <span>Work With Us</span>
+          <span>Talk to an Expert</span>
           <ArrowUpRight 
             className="w-[18px] h-[18px] sm:w-[22px] sm:h-[22px] stroke-[2.5]" 
             id="cta-arrow-icon"
@@ -60,7 +60,7 @@ export default function BottomSection() {
           id="bottom-description-block"
         >
           <p className="text-[9px] sm:text-xs md:text-sm font-semibold tracking-widest uppercase text-left md:text-right text-black leading-relaxed">
-            Creative Studios Built Around Elevating Your Vision Into Striking Reality
+            We translate satellite imagery, GIS, remote sensing, and drone mapping into high-precision spatial analytics for data-driven decision making.
           </p>
         </motion.div>
 
