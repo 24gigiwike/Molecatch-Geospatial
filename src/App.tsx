@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from 'motion/react';
 import NavBar from './components/NavBar';
 import BottomSection from './components/BottomSection';
 import MobileMenu from './components/MobileMenu';
-import MobilePageSelector from './components/MobilePageSelector';
 import ExpertisePage from './components/ExpertisePage';
 import CapabilitiesPage from './components/CapabilitiesPage';
 import ContactPage from './components/ContactPage';
@@ -90,12 +89,6 @@ export default function App() {
         <NavBar 
           navLinks={NAV_LINKS} 
           onOpenMenu={() => setIsMenuOpen(true)} 
-        />
-
-        {/* Section 2: Mobile Navigation Buttons (Mobile-only quick-switching buttons) */}
-        <MobilePageSelector 
-          currentPage={currentPage} 
-          onSelectPage={setCurrentPage} 
         />
 
         {/* Section 3: Dynamic Content Body */}
