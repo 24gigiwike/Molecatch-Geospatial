@@ -66,7 +66,7 @@ export default function App() {
       {/* 
         Three-section full-screen column:
         1. Nav (fixed height, top-aligned)
-        2. Stats Row (flex-1, centered, right-aligned)
+        2. Vertical Spacer (replacing StatsRow to maintain vertical distribution)
         3. Bottom Section (pinned with bottom padding)
       */}
       <div 
@@ -79,10 +79,8 @@ export default function App() {
           onOpenMenu={() => setIsMenuOpen(true)} 
         />
 
-        {/* Section 2: Vertically Centered Stats Row */}
-        <StatsRow 
-          stats={STAT_ITEMS} 
-        />
+        {/* Section 2: Vertical Spacer */}
+        <div className="flex-1" id="vertical-spacer" />
 
         {/* Section 3: Bottom Content */}
         <BottomSection />
