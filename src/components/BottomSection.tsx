@@ -46,29 +46,41 @@ export default function BottomSection() {
         </div>
 
         {/* Right: Main Heading with responsive typography */}
-        <h1 
-          className="flex flex-col items-center md:items-end text-center md:text-right uppercase text-black font-semibold w-full max-w-[90%] md:max-w-none mx-auto md:mx-0 responsive-headline"
-          id="main-heading"
-        >
-          {headingWords.map((word, idx) => (
-            <span 
-              key={word} 
-              className="block overflow-hidden h-fit" 
-              id={`heading-word-wrapper-${word.toLowerCase()}`}
-            >
-              <motion.span
-                variants={headingSlideUpVariant}
-                initial="initial"
-                animate="animate"
-                custom={idx}
-                className="block"
-                id={`heading-word-${word.toLowerCase()}`}
+        <div className="flex flex-col items-center md:items-end gap-3 md:gap-4 w-full md:w-auto" id="main-heading-container">
+          <motion.div
+            variants={fadeUpVariant}
+            initial="initial"
+            animate="animate"
+            custom={2}
+            className="text-[11px] sm:text-[12px] md:text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-500/80 select-none"
+            id="reference-code"
+          >
+            BN: UY/007439
+          </motion.div>
+          <h1 
+            className="flex flex-col items-center md:items-end text-center md:text-right uppercase text-black font-semibold w-full max-w-[90%] md:max-w-none mx-auto md:mx-0 responsive-headline"
+            id="main-heading"
+          >
+            {headingWords.map((word, idx) => (
+              <span 
+                key={word} 
+                className="block overflow-hidden h-fit" 
+                id={`heading-word-wrapper-${word.toLowerCase()}`}
               >
-                {word}
-              </motion.span>
-            </span>
-          ))}
-        </h1>
+                <motion.span
+                  variants={headingSlideUpVariant}
+                  initial="initial"
+                  animate="animate"
+                  custom={idx + 3}
+                  className="block"
+                  id={`heading-word-${word.toLowerCase()}`}
+                >
+                  {word}
+                </motion.span>
+              </span>
+            ))}
+          </h1>
+        </div>
       </div>
     </footer>
   );
