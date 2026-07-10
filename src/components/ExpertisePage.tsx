@@ -105,7 +105,7 @@ export default function ExpertisePage() {
               animate="animate"
               custom={4 + idx * 0.1}
               onClick={() => setSelectedIdx(idx)}
-              className={`p-3.5 sm:p-4 text-left border-l-2 transition-all cursor-pointer flex justify-between items-center ${
+              className={`p-3.5 sm:p-4 text-left border-l-2 transition-all cursor-pointer flex justify-between items-center bg-transparent ${
                 selectedIdx === idx
                   ? 'border-[var(--color-accent)] bg-[var(--color-accent)]/5 text-black'
                   : 'border-transparent text-neutral-500 hover:text-black hover:bg-neutral-50'
